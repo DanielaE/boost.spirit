@@ -56,6 +56,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
             return impl::contiguous_parser_parse<result_t>
                 (this->subject(), scan, scan);
         }
+    private:
+        contiguous& operator=(const contiguous&);
     };
 
     struct lexeme_parser_gen
@@ -162,6 +164,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
             return impl::inhibit_case_parser_parse<result_t>
                 (this->subject(), scan, scan);
         }
+    private:
+        inhibit_case& operator=(const inhibit_case&);
     };
 
     template <int N>

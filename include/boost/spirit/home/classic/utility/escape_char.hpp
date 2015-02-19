@@ -78,6 +78,7 @@ struct escape_char_action
     ActionT const& predicate() const { return actor; }
 
 private:
+    escape_char_action& operator=(const escape_char_action&);
 
     ActionT actor;
 };

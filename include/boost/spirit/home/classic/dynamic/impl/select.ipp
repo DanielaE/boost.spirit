@@ -13,6 +13,11 @@
 #include <boost/spirit/home/classic/core/composite/composite.hpp>
 #include <boost/spirit/home/classic/meta/as_parser.hpp>
 
+#ifdef BOOST_MSVC
+# pragma warning(push)
+# pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 namespace boost { namespace spirit {
 
@@ -116,5 +121,9 @@ struct parse_tuple_element<1, ResultT, TupleT, BehaviourT> {
 BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 
 }}  // namespace boost::spirit
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif  // BOOST_SPIRIT_SELECT_IPP

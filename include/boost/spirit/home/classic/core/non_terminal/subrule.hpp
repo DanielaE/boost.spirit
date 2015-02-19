@@ -228,6 +228,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 
         typename DefT::embed_t rhs;
         subrule_t const& start;
+    private:
+        subrule_parser& operator=(const subrule_parser&);
     };
 
     ///////////////////////////////////////////////////////////////////////////

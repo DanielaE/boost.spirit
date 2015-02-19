@@ -24,6 +24,7 @@ namespace phoenix {
 #if BOOST_WORKAROUND(BOOST_MSVC, >= 1400)
 #pragma warning(push)
 #pragma warning(disable:4512) //assignment operator could not be generated
+#pragma warning(disable:4709) //comma operator within array index expression
 #endif
 
 ///////////////////////////////////////////////////////////////////////////////

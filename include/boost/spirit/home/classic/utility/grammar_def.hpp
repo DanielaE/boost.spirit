@@ -50,6 +50,11 @@ BOOST_STATIC_ASSERT(BOOST_SPIRIT_GRAMMAR_STARTRULE_TYPE_LIMIT <= PHOENIX_LIMIT);
 BOOST_STATIC_ASSERT(BOOST_SPIRIT_GRAMMAR_STARTRULE_TYPE_LIMIT <= 15);
 BOOST_STATIC_ASSERT(BOOST_SPIRIT_GRAMMAR_STARTRULE_TYPE_LIMIT > 0);
 
+#ifdef _MSC_VER
+# pragma warning(push)
+# pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 //////////////////////////////////////////////////////////////////////////////
 namespace boost { namespace spirit {
 
@@ -303,5 +308,9 @@ private:
 BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 
 }} // namespace BOOST_SPIRIT_CLASSIC_NS
+
+#ifdef _MSC_VER
+# pragma warning(pop)
+#endif
 
 #endif // BOOST_SPIRIT_GRAMMAR_DEF_HPP

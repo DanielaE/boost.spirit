@@ -846,6 +846,8 @@ struct no_tree_gen_node_parser
 
         return this->subject().parse(scanner.change_policies(policies_t(scanner)));
     }
+private:
+    no_tree_gen_node_parser& operator=(const no_tree_gen_node_parser&);
 };
 
 struct no_tree_gen_node_parser_gen
@@ -981,6 +983,8 @@ struct node_parser
         }
         return hit;
     }
+private:
+    node_parser& operator=(const node_parser&);
 };
 
 template <typename NodeParserT>

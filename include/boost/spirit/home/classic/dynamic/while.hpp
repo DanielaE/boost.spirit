@@ -71,7 +71,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 
             iterator_t save(scan.first);
             std::size_t length = 0;
-            int eval_length = 0;
+            std::ptrdiff_t eval_length = 0;
 
             bool dont_check_condition = is_do_parser;
 
@@ -112,6 +112,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
             return while_parser<ParsableT, CondT, false>(subject, cond);
         }
     private:
+        while_parser_gen& operator=(const while_parser_gen&);
 
         //////////////////////////////
         // the condition is stored by reference here.
@@ -144,6 +145,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
             return while_parser<ParsableT, CondT, true>(body, cond);
         }
     private:
+        do_while_parser_gen& operator=(const do_while_parser_gen&);
 
         //////////////////////////////
         // the body is stored by reference here

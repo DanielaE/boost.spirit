@@ -170,6 +170,8 @@ namespace xml {
             if (incr_indent) --get_indent();
         }
 
+        element& operator=(const element&);
+
     public:
         void output_space ()
         {
@@ -221,6 +223,8 @@ namespace xml {
         }
 
     private:
+        node& operator=(const node&);
+
         std::basic_string<CharT> tag;
     };
 
@@ -268,6 +272,8 @@ namespace xml {
                   << impl::string_lit<CharT>::get("</") << tag
                   << impl::string_lit<CharT>::get(">\n");
         }
+
+        text& operator=(const text&);
     };
 
     // a xml comment
@@ -287,6 +293,8 @@ namespace xml {
                       << impl::string_lit<CharT>::get(" -->\n");
             }
         }
+
+        comment& operator=(const comment&);
     };
 
     // a xml document
@@ -320,6 +328,8 @@ namespace xml {
         {
             BOOST_SPIRIT_ASSERT(-1 == this->get_indent());
         }
+
+        document& operator=(const document&);
     };
 
 } // end of namespace xml

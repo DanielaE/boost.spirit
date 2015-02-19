@@ -118,6 +118,8 @@ struct list_parser :
     }
 
 private:
+    list_parser& operator=(const list_parser&);
+
     typename as_parser<ItemT>::type::embed_t item;
     typename as_parser<DelimT>::type::embed_t delim;
     typename as_parser<EndT>::type::embed_t end;

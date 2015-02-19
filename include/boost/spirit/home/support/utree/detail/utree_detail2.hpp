@@ -12,6 +12,7 @@
 #if defined(BOOST_MSVC)
 # pragma warning(push)
 # pragma warning(disable: 4800)
+# pragma warning(disable: 4702)
 #endif
 
 #include <boost/type_traits/remove_pointer.hpp>
@@ -39,7 +40,7 @@ namespace boost { namespace spirit { namespace detail
 
     inline void fast_string::set_type(int t)
     {
-        info() = (t << 1) | (info() & 1);
+        info() = static_cast<char>((t << 1) | (info() & 1));
     }
 
     inline short fast_string::tag() const
@@ -77,7 +78,7 @@ namespace boost { namespace spirit { namespace detail
     template <typename Iterator>
     inline void fast_string::construct(Iterator f, Iterator l)
     {
-        unsigned const size = l-f;
+        std::size_t size = l-f;
         char* str;
         if (size < max_string_len)
         {
@@ -420,6 +421,8 @@ namespace boost { namespace spirit { namespace detail
         {
             return f(x, y);
         }
+    private:
+        bind_impl& operator=(const bind_impl&);
     };
 
     template <typename F, typename X>

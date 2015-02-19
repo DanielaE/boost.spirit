@@ -276,6 +276,8 @@ namespace boost { namespace spirit
         {
             return (*this)("<function>");
         }
+    private:
+        utree_print& operator=(const utree_print);
     };
 #endif
 

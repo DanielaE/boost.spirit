@@ -41,6 +41,11 @@
 #error "Please set the BOOST_KARMA_NUMERICS_LOOP_UNROLL to a non-negative value!"
 #endif
 
+#if defined(BOOST_MSVC)
+# pragma warning(push)
+# pragma warning(disable: 4127) // conditional expression is constant
+#endif
+
 namespace boost { namespace spirit { namespace traits
 {
     ///////////////////////////////////////////////////////////////////////
@@ -769,6 +774,10 @@ namespace boost { namespace spirit { namespace karma
     };
 
 }}}
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif
 

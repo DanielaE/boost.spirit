@@ -46,6 +46,8 @@ public:
     {
     }
 
+    distinct_parser& operator=(const distinct_parser&);
+
     explicit distinct_parser(parser<TailT> const & tail_)
     :   tail(tail_.derived())
     {
@@ -89,6 +91,8 @@ public:
     :   tail(chset<CharT>())
     {
     }
+
+    distinct_directive& operator=(const distinct_directive&);
 
     explicit distinct_directive(CharT const* letters)
     :   tail(chset_p(letters))

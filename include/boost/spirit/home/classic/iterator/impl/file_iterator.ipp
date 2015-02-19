@@ -31,6 +31,11 @@
 #  include <sys/mman.h>  // mmap, mmunmap
 #endif
 
+#ifdef BOOST_MSVC
+# pragma warning(push)
+# pragma warning(disable: 4996) // unsafe function
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 namespace boost { namespace spirit {
 
@@ -149,7 +154,7 @@ private:
     {
         using namespace std;
         if ((std::size_t)ftell(m_file.get()) != m_pos)
-            fseek(m_file.get(), m_pos, SEEK_SET);
+            fseek(m_file.get(), static_cast<long>(m_pos), SEEK_SET);
 
         m_eof = (fread(&m_curChar, sizeof(CharT), 1, m_file.get()) < 1);
     }
@@ -459,5 +464,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 
 }} /* namespace boost::spirit */
 
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif /* BOOST_SPIRIT_FILE_ITERATOR_IPP */

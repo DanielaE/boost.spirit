@@ -28,6 +28,7 @@
 # pragma warning(push)
 # pragma warning(disable: 4127) // conditional expression is constant
 # pragma warning(disable: 4800) // 'int' : forcing value to bool 'true' or 'false' warning
+# pragma warning(disable: 4127) // conditional expression is constant
 #endif
 
 namespace boost { namespace spirit { namespace detail

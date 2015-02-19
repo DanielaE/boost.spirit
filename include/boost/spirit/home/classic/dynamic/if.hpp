@@ -129,6 +129,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 
         ParsableTrueT const &p_true;
         CondT const &cond;
+    private:
+        if_else_parser_gen& operator=(const if_else_parser_gen&);
     };
 
     //////////////////////////////////
@@ -208,6 +210,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         }
 
         CondT const &cond;
+    private:
+        if_parser_gen& operator=(const if_parser_gen&);
     };
 
 } // namespace impl

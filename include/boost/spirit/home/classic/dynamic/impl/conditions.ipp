@@ -85,6 +85,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         }
 
         cond_embed_t cond;
+    private:
+        condition_evaluator& operator=(const condition_evaluator&);
     };
 
 ///////////////////////////////////////////////////////////////////////////////

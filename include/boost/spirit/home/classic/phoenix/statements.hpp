@@ -50,6 +50,8 @@ struct sequential_composite {
     }
 
     A0 a0; A1 a1; //  actors
+private:
+    sequential_composite& operator=(const sequential_composite&);
 };
 
 //////////////////////////////////

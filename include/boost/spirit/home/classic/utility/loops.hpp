@@ -80,6 +80,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         };
 
     private:
+        fixed_loop& operator=(const fixed_loop&);
 
         ExactT m_exact;
     };

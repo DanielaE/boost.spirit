@@ -12,6 +12,11 @@
 ///////////////////////////////////////////////////////////////////////////
 #if defined(BOOST_SPIRIT_DEBUG)
 
+#if defined(_MSC_VER)
+# pragma warning(push)
+# pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 #include <boost/spirit/home/classic/version.hpp>
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -143,6 +148,10 @@
 
     //////////////////////////////////
     #include <boost/spirit/home/classic/debug/debug_node.hpp>
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #else
     //////////////////////////////////

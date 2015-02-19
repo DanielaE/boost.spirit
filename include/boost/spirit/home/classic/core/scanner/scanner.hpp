@@ -195,6 +195,9 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         : IterationPolicyT(policies)
         , MatchPolicyT(policies)
         , ActionPolicyT(policies) {}
+
+    private:
+        scanner_policies& operator=(const scanner_policies&);
     };
 
     ///////////////////////////////////////////////////////////////////////////

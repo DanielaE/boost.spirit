@@ -196,6 +196,8 @@ namespace boost { namespace spirit { namespace traits
             }
 
             utree& ut_;
+        private:
+            assign_to_utree_visitor& operator=(const assign_to_utree_visitor&);
         };
     }
 

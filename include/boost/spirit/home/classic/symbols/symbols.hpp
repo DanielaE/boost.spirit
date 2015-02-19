@@ -216,6 +216,7 @@ public:
     }
 
 private:
+    symbol_inserter& operator=(const symbol_inserter&);
 
     SetT& set;
 };

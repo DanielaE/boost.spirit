@@ -28,6 +28,11 @@
 
 #include <boost/type_traits/add_const.hpp>
 
+#if defined(BOOST_MSVC)
+# pragma warning(push)
+# pragma warning(disable: 4512) // assignment operator could not be generated
+#endif
+
 namespace boost { namespace spirit
 {
     ///////////////////////////////////////////////////////////////////////////
@@ -222,5 +227,9 @@ namespace boost { namespace spirit { namespace traits
           , Context, Iterator>
       : mpl::true_ {};
 }}}
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif

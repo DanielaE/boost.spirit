@@ -275,6 +275,8 @@ namespace boost { namespace spirit
         virtual utree operator()(utree const& env) const;
         virtual utree operator()(utree& env) const;
         virtual function_base* clone() const;
+    private:
+        referenced_function& operator=(const referenced_function&);
     };
     //]
 

@@ -102,6 +102,8 @@ struct switch_parser
     :   base_t(case_), cond(cond_)
     {}
 
+    switch_parser& operator=(const switch_parser&);
+
     template <typename ScannerT>
     struct result
     {
@@ -126,6 +128,8 @@ struct switch_cond_parser
     switch_cond_parser(CondT const &cond_)
     :   cond(cond_)
     {}
+
+    switch_cond_parser& operator=(const switch_cond_parser&);
 
     template <typename ParserT>
     switch_parser<ParserT, CondT>
