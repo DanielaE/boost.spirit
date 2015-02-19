@@ -147,6 +147,8 @@ struct gen_pt_node_parser
     gen_pt_node_parser(T const& a)
     : unary<T, parser<gen_pt_node_parser<T> > >(a) {}
 
+    gen_pt_node_parser& operator=(const gen_pt_node_parser&);
+
     template <typename ScannerT>
     typename parser_result<self_t, ScannerT>::type
     parse(ScannerT const& scan) const

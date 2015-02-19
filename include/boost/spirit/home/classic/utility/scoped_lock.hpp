@@ -46,6 +46,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
             , mutex(m)
         {}
 
+        scoped_lock_parser& operator=(const scoped_lock_parser&);
 
         template <typename ScannerT>
         typename parser_result<self_t, ScannerT>::type
@@ -72,6 +73,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
     {
         typedef MutexT mutex_t;
         explicit scoped_lock_parser_gen(mutex_t &m) : mutex(m) {}
+
+        scoped_lock_parser_gen& operator=(const scoped_lock_parser_gen&);
 
         template<typename ParserT>
         scoped_lock_parser

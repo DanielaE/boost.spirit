@@ -26,6 +26,11 @@
 
 #include <boost/static_assert.hpp>
 
+#ifdef BOOST_MSVC
+# pragma warning(push)
+# pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 //  Spirit predefined maximum closure limit. This limit defines the maximum
@@ -151,6 +156,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 
         init_closure_parser(ParserT const& p, ActorTupleT const& init_)
         : base_t(p), init(init_) {}
+
+        init_closure_parser& operator=(const init_closure_parser&);
 
         template <typename ScannerT>
         typename parser_result<self_t, ScannerT>::type
@@ -1079,5 +1086,9 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 
 }} // namespace BOOST_SPIRIT_CLASSIC_NS
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif

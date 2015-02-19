@@ -180,7 +180,7 @@ namespace boost { namespace spirit { namespace karma
         bool test(Attribute const& attr, CharParam& ch_, Context&) const
         {
             // fail if attribute isn't matched my immediate literal
-            ch_ = attr;
+            ch_ = static_cast<CharParam>(attr);
             return attr == ch;
         }
 

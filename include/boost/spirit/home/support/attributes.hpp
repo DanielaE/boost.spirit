@@ -1212,6 +1212,8 @@ namespace boost { namespace spirit { namespace traits
 
             Out& out;
             mutable bool is_first;
+        private:
+            print_fusion_sequence& operator=(const print_fusion_sequence&);
         };
 
         // print elements in a variant

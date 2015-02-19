@@ -30,6 +30,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 
             for_functor(param_t f) : func(f) {}
             for_functor() {}
+            for_functor& operator=(const for_functor&);
             FuncT func;
         };
 
@@ -41,6 +42,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 
             for_init_functor(param_t f) : base_t(f) {}
             for_init_functor() : base_t() {}
+            for_init_functor& operator=(const for_init_functor&);
             void init() const { /*return*/ this->func(); }
         };
 
@@ -52,6 +54,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 
             for_step_functor(param_t f) : base_t(f) {}
             for_step_functor() : base_t() {}
+            for_step_functor& operator=(const for_step_functor&);
             void step() const { /*return*/ this->func(); }
         };
 
@@ -116,7 +119,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
                 typename ScannerT::iterator_t save(scan.first);
 
                 std::size_t length = 0;
-                int eval_length = 0;
+                std::ptrdiff_t eval_length = 0;
 
                 this->init();
                 while ((eval_length = this->evaluate(scan))>=0)
@@ -151,6 +154,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
                 , condition(c)
                 , step(s)
             {}
+
+            for_parser_gen& operator=(const for_parser_gen&);
 
             template <typename ParsableT>
             for_parser<InitF, CondT, StepF, ParsableT>

@@ -9,6 +9,11 @@
 #ifndef BOOST_SPIRIT_TST_IPP
 #define BOOST_SPIRIT_TST_IPP
 
+#ifdef BOOST_MSVC
+# pragma warning(push)
+# pragma warning(disable: 4127) // conditional expression is constant
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 #include <memory> // for std::auto_ptr
 #include <boost/spirit/home/classic/core/assert.hpp>
@@ -277,5 +282,9 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 
 }} // namespace boost::spirit
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif

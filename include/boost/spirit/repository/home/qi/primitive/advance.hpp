@@ -76,6 +76,8 @@ namespace boost { namespace spirit { namespace repository { namespace qi
         }
 
     private:
+        advance_parser& operator=(const advance_parser&);
+
         // this is the general implementation used by most iterator categories
         template <typename Iterator, typename IteratorCategory>
         bool advance(Iterator& first, Iterator const& last

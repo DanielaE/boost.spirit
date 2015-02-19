@@ -13,6 +13,11 @@
 #include <boost/spirit/home/support/unused.hpp>
 #include <boost/spirit/home/karma/detail/unused_delimiter.hpp>
 
+#if defined(BOOST_MSVC)
+# pragma warning(push)
+# pragma warning(disable: 4100) // unused formal parameter
+#endif
+
 namespace boost { namespace spirit { namespace karma
 {
     ///////////////////////////////////////////////////////////////////////////
@@ -40,6 +45,10 @@ namespace boost { namespace spirit { namespace karma
     }
 
 }}}
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif
 

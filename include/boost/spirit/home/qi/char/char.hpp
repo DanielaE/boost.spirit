@@ -31,8 +31,9 @@
 #include <boost/type_traits/remove_const.hpp>
 #include <string>
 
-#if defined(_MSC_VER)
-#pragma once
+#if defined(BOOST_MSVC)
+# pragma warning(push)
+# pragma warning(disable: 4244) // narrowing conversion
 #endif
 
 namespace boost { namespace spirit
@@ -611,5 +612,9 @@ namespace boost { namespace spirit { namespace qi
         }
     };
 }}}
+
+#if defined(BOOST_MSVC)
+# pragma warning(pop)
+#endif
 
 #endif

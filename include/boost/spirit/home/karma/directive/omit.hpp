@@ -20,6 +20,11 @@
 #include <boost/spirit/home/support/handles_container.hpp>
 #include <boost/spirit/home/karma/detail/attributes.hpp>
 
+#if defined(BOOST_MSVC)
+# pragma warning(push)
+# pragma warning(disable: 4127) // conditional expression is constant
+#endif
+
 namespace boost { namespace spirit
 {
     ///////////////////////////////////////////////////////////////////////////
@@ -131,5 +136,9 @@ namespace boost { namespace spirit { namespace traits
         , Context, Iterator>
       : unary_handles_container<Subject, Attribute, Context, Iterator> {};
 }}}
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif

@@ -60,6 +60,8 @@ namespace boost { namespace spirit { namespace qi
 
             Iterator& it_;
             bool inhibit_clear_queue_;
+        private:
+            reset_on_exit& operator=(const reset_on_exit&);
         };
     }
 

@@ -16,6 +16,12 @@
 #include <boost/spirit/home/classic/core/composite/composite.hpp>
 #include <boost/spirit/home/classic/core/composite/no_actions.hpp>
 
+#ifdef BOOST_MSVC
+# pragma warning(push)
+# pragma warning(disable: 4800) // forcing value to bool 'true' or 'false' (performance warning)
+# pragma warning(disable: 4100) // unreferenced formal parameter
+#endif
+
 ////////////////////////////////////////////////////////////////////////////////
 namespace boost { namespace spirit {
 
@@ -57,6 +63,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         { return condition_parser<CondT, !positive_>(cond); }
 
     private:
+        condition_parser& operator=(const condition_parser&);
 
         CondT cond;
     };
@@ -110,6 +117,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 
         explicit empty_match_parser(SubjectT const& p) : base_t(p) {}
 
+        empty_match_parser& operator=(const empty_match_parser&);
+
         template <typename ScannerT>
         struct result
         { typedef typename match_result<ScannerT, nil_t>::type type; };
@@ -151,6 +160,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         typedef negated_empty_match_parser_gen          parser_genererator_t;
 
         explicit negated_empty_match_parser(SubjectT const& p) : base_t(p) {}
+
+        negated_empty_match_parser& operator=(const negated_empty_match_parser&);
 
         template <typename ScannerT>
         struct result
@@ -272,5 +283,9 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 
 }} // namespace BOOST_SPIRIT_CLASSIC_NS
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif

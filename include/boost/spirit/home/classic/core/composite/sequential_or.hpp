@@ -81,6 +81,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
             // matched b
             return this->right().parse(scan);
         }
+    private:
+        sequential_or& operator=(const sequential_or&);
     };
     
     struct sequential_or_parser_gen

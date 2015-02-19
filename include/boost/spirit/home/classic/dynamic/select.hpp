@@ -108,7 +108,9 @@ struct select_parser
     select_parser(TupleT const &t_)
     :   t(t_)
     {}
-    
+
+    select_parser& operator=(const select_parser&);
+
     template <typename ScannerT>
     struct result
     {

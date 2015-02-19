@@ -63,6 +63,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
                 return scan.empty_match();
             }
         }
+    private:
+        optional& operator=(const optional&);
     };
     
     struct optional_parser_gen

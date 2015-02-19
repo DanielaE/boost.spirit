@@ -43,6 +43,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         T& ref;
         T& swap_ref;
 
+        swap_actor& operator=(const swap_actor&);
+
     public:
         swap_actor(
             T& ref_,

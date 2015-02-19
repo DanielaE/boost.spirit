@@ -262,7 +262,7 @@ namespace boost { namespace spirit { namespace qi
             not_supported_radix, ());
 
         template <typename Value>
-        literal_uint_parser(Value const& n) : n_(n) {}
+        literal_uint_parser(Value const& n) : n_(static_cast<T>(n)) {}
 
         template <typename Context, typename Iterator>
         struct attribute

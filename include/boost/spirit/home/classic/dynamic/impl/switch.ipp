@@ -505,6 +505,8 @@ struct cond_actor {
     :   actor(actor_)
     {}
 
+    cond_actor& operator=(const cond_actor&);
+
     template <typename ScannerT>
     struct result
     {

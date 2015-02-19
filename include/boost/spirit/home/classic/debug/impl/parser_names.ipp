@@ -218,7 +218,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 //  from parser.hpp
     template <typename DerivedT>
     inline std::string
-    parser_name(parser<DerivedT> const& p)
+    parser_name(parser<DerivedT> const&)
     {
         return std::string("parser");
     }

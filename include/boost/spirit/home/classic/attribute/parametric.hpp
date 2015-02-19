@@ -29,6 +29,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         f_chlit(ChGenT chgen_)
         : chgen(chgen_) {}
 
+        f_chlit& operator=(const f_chlit&);
+
         template <typename T>
         bool test(T ch) const
         { return ch == chgen(); }
@@ -52,6 +54,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         f_range(ChGenAT first_, ChGenBT last_)
         : first(first_), last(last_)
         {}
+
+        f_range& operator=(const f_range&);
 
         template <typename T>
         bool test(T ch) const
@@ -93,6 +97,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         }
 
     private:
+        f_chseq& operator=(const f_chseq&);
 
         IterGenAT first;
         IterGenBT last;
@@ -128,6 +133,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         }
 
     private:
+        f_strlit& operator=(const f_strlit&);
 
         f_chseq<IterGenAT, IterGenBT> seq;
     };

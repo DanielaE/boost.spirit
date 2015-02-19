@@ -43,6 +43,9 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
     private:
         T& ref;
         ValueT const& value_ref;
+
+        ref_const_ref_value_actor& operator=(const ref_const_ref_value_actor&);
+
     public:
         ref_const_ref_value_actor(
             T& ref_,
@@ -52,7 +55,6 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
             ref(ref_),
             value_ref(value_ref_)
         {}
-
 
         template<typename T2>
         void operator()(T2 const& val_) const

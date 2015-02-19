@@ -13,6 +13,11 @@
 #include <cassert>
 #include <boost/spirit/home/classic/phoenix/tuples.hpp>
 
+#ifdef BOOST_MSVC
+# pragma warning(push)
+# pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 namespace phoenix
 {
@@ -1071,5 +1076,9 @@ namespace impl
 
 ///////////////////////////////////////////////////////////////////////////////
 }   //  namespace phoenix
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif // PHOENIX_TUPLEHELPERS_HPP

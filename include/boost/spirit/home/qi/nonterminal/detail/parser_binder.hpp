@@ -24,6 +24,8 @@ namespace boost { namespace spirit { namespace qi { namespace detail
         parser_binder(Parser const& p_)
           : p(p_) {}
 
+        parser_binder& operator=(const parser_binder&);
+
         template <typename Iterator, typename Skipper, typename Context>
         bool call(Iterator& first, Iterator const& last
           , Context& context, Skipper const& skipper, mpl::true_) const

@@ -83,6 +83,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         template <typename ScannerT>
         void
         skip(ScannerT const& /*scan*/) const {}
+    private:
+        no_skipper_iteration_policy& operator=(const no_skipper_iteration_policy&);
     };
 
     ///////////////////////////////////////////////////////////////////////////
@@ -144,7 +146,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         }
     
     private:
-    
+        skip_parser_iteration_policy& operator=(const skip_parser_iteration_policy&);
+
         ParserT const& subject;
     };
     

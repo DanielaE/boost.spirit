@@ -151,6 +151,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         }
 
         ErrorDescrT descriptor;
+    private:
+        assertive_parser& operator=(const assertive_parser&);
     };
 
     ///////////////////////////////////////////////////////////////////////////

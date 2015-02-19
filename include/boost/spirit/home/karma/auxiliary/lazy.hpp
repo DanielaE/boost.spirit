@@ -24,6 +24,11 @@
 #include <boost/type_traits/remove_reference.hpp>
 #include <boost/mpl/not.hpp>
 
+#if defined(BOOST_MSVC)
+# pragma warning(push)
+# pragma warning(disable: 4100) // unreferenced formal parameter
+#endif
+
 namespace boost { namespace spirit
 {
     ///////////////////////////////////////////////////////////////////////////
@@ -263,5 +268,9 @@ namespace boost { namespace spirit { namespace karma
     };
 
 }}}
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif

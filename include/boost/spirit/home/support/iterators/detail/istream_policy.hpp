@@ -85,6 +85,7 @@ namespace boost { namespace spirit { namespace iterator_policies
         {
         private:
             typedef typename T::char_type result_type;
+            shared& operator=(const shared&);
 
         public:
             explicit shared(T& input) 

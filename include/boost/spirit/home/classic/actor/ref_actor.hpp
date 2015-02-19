@@ -40,11 +40,13 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
     {
     private:
         T& ref;
+
+        ref_actor& operator=(const ref_actor&);
+
     public:
         explicit
         ref_actor(T& ref_)
         : ref(ref_){}
-
 
         template<typename T2>
         void operator()(T2 const& /*val*/) const

@@ -11,6 +11,11 @@
 ///////////////////////////////////////////////////////////////////////////////
 #include <boost/spirit/home/classic/phoenix/actor.hpp>
 
+#ifdef BOOST_MSVC
+# pragma warning(push)
+# pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 namespace phoenix {
 
@@ -252,5 +257,9 @@ const_(actor<BaseT> const& v);  //  This is undefined and not allowed.
 
 ///////////////////////////////////////////////////////////////////////////////
 }   //  namespace phoenix
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif

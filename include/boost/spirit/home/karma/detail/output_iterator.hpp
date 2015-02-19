@@ -611,6 +611,8 @@ namespace boost { namespace spirit { namespace karma { namespace detail
 
         OutputIterator& sink;
         bool prev_do_output;
+    private:
+        disable_output& operator=(const disable_output&);
     };
 
     ///////////////////////////////////////////////////////////////////////////

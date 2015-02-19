@@ -41,6 +41,11 @@
 #include <iosfwd>
 #endif
 
+#if defined(BOOST_MSVC)
+# pragma warning(push)
+# pragma warning(disable: 4310) // cast truncates constant value
+#endif
+
 namespace boost { namespace spirit { namespace lex { namespace lexertl
 { 
     ///////////////////////////////////////////////////////////////////////////
@@ -646,5 +651,9 @@ namespace boost { namespace spirit { namespace traits
         }
     };
 }}}
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif

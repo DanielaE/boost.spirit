@@ -43,6 +43,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
     private:
         T& ref;
         ValueT const& value_ref;
+
+        ref_const_ref_actor& operator=(const ref_const_ref_actor&);
     public:
         ref_const_ref_actor(
             T& ref_,

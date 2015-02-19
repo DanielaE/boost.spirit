@@ -282,6 +282,8 @@ namespace boost { namespace spirit { namespace karma { namespace detail
 
         Iterator& iter;
         Iterator& end;
+    private:
+        pass_container_base& operator=(const pass_container_base&);
     };
 
     ///////////////////////////////////////////////////////////////////////////

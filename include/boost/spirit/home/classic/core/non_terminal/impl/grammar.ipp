@@ -340,6 +340,8 @@ struct grammar_definition
         }
 
     private:
+        entry_grammar& operator=(const entry_grammar&);
+
         DerivedT const &target_grammar;
     };
 
