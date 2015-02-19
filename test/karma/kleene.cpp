@@ -45,6 +45,8 @@ struct action
 
     std::vector<char>& vec;
     mutable std::vector<char>::iterator it;
+private:
+    action& operator=(const action&);
 };
 
 struct A
