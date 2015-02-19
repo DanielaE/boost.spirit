@@ -59,6 +59,7 @@ int main()
 
         // silence stupid compiler warnings
         // i.e. MSVC warning C4189: 'f' : local variable is initialized but not referenced
+        (void)f;
         BOOST_TEST((f.value));
 
         BOOST_TEST((test("Joel", sym, 'j')));
@@ -111,6 +112,7 @@ int main()
 
         // silence stupid compiler warnings
         // i.e. MSVC warning C4189: 'f' : local variable is initialized but not referenced
+        (void)f;
         BOOST_TEST((f.value));
 
         BOOST_TEST((test("Joel", sym, fusion::make_vector('j', "Joel"))));

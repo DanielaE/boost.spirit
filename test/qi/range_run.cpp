@@ -14,6 +14,7 @@
 
 #if defined(BOOST_MSVC)
 # pragma warning(disable: 4800) // 'int' : forcing value to bool 'true' or 'false' warning
+# pragma warning(disable: 4127) // conditional expression is constant
 #endif
 
 template <typename Char>
