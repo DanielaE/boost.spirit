@@ -106,6 +106,8 @@ public:
     Container& container() { return container_; }
     
 private:
+    container_device& operator=(const container_device&);
+
     typedef typename Container::size_type size_type;
     Container& container_;
     size_type pos_;

@@ -68,6 +68,7 @@ struct store_action
     store_action(T const &v) : value(v) {}
     void operator()(T &v) const { v = value; }
 private:
+    store_action& operator=(const store_action&);
     T const value;
 };
 
@@ -86,6 +87,7 @@ struct check_action
 #define correct_value_stored (v==value)
     void operator()(T const &v) const { BOOST_TEST(correct_value_stored); }
 private:
+    check_action& operator=(const check_action&);
     T const value;
 };
 

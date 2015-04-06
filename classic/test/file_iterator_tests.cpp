@@ -12,6 +12,10 @@
 #include <boost/concept_check.hpp>
 #include <boost/spirit/include/classic_file_iterator.hpp>
 
+#ifdef BOOST_MSVC
+# pragma warning(disable: 4996) // unsafe function
+#endif
+
 // This checks for a namespace related problem in VC8
 // The problem can be avoided by not using "using namespace std;" in the
 // Spirit headers

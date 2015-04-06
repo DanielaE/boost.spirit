@@ -57,6 +57,8 @@ namespace
         { ref += val; }
 
     private:
+        add_actor& operator=(const add_actor&);
+
         T& ref;
     };
 
@@ -126,6 +128,7 @@ template<typename T>
 struct inc_actor
 {
     explicit inc_actor(T &t) : var(t) {}
+    inc_actor& operator=(const inc_actor&);
     template<typename IteratorT>
     void operator()(IteratorT const &, IteratorT const &) const
     {
