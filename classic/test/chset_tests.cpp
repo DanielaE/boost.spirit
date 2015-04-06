@@ -323,7 +323,7 @@ namespace
 } // namespace
 
 int
-main(int argc, char *argv[])
+main(int, char *[])
 {
     chset_tests();
     return boost::report_errors();

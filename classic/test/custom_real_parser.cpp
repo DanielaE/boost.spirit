@@ -15,7 +15,7 @@
 using namespace BOOST_SPIRIT_CLASSIC_NS;
 using boost::math::concepts::real_concept;
 
-int main(int argc, char* argv[])
+int main(int, char*[])
 {
     real_parser<real_concept> const rr_p;
     bool started = false;

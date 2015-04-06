@@ -64,6 +64,7 @@ struct count_guard
     count_guard(int &c) : counter(c) {}
     ~count_guard() { counter = 0; }
 private:
+    count_guard& operator=(const count_guard&);
     int &counter;
 };
 
