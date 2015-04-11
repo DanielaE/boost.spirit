@@ -45,6 +45,10 @@
 #include <boost/spirit/repository/home/qi/operator/detail/keywords.hpp>
 #include <boost/fusion/include/any.hpp>
 
+#if defined(BOOST_MSVC)
+# pragma warning(push)
+# pragma warning(disable: 4127) // conditional expression is constant
+#endif
 
 namespace boost { namespace spirit
 {
@@ -431,6 +435,10 @@ namespace boost { namespace spirit { namespace traits
 
 
 }}}
+
+#if defined(BOOST_MSVC)
+# pragma warning(pop)
+#endif
 
 #endif
 

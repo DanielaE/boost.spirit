@@ -347,6 +347,8 @@ namespace boost { namespace spirit { namespace repository { namespace qi
 
         binder_type const binder;
         std::string const name;
+    private:
+        subrule_definition& operator=(const subrule_definition&);
     };
 
     ///////////////////////////////////////////////////////////////////////////
