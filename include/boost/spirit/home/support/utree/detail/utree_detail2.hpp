@@ -12,6 +12,8 @@
 #if defined(BOOST_MSVC)
 # pragma warning(push)
 # pragma warning(disable: 4800)
+# pragma warning(disable: 4244) // narrowing conversion
+# pragma warning(disable: 4702) // unreachable code
 #endif
 
 #include <boost/type_traits/remove_pointer.hpp>
@@ -931,11 +933,11 @@ namespace boost { namespace spirit
         return *this;
     }
 
-    inline utree& utree::operator=(any_ptr const& p)
+    inline utree& utree::operator=(any_ptr const& p_)
     {
         free();
-        v.p = p.p;
-        v.i = p.i;
+        v.p = p_.p;
+        v.i = p_.i;
         set_type(type::any_type);
         return *this;
     }

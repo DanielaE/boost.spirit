@@ -67,7 +67,7 @@ struct test_impl
     void operator()(TokenId const& tokenid, Value const& val) const
     {
         BOOST_TEST(sequence_counter < sizeof(data)/sizeof(data[0]));
-        BOOST_TEST(data[sequence_counter].tokenid == tokenid);
+        BOOST_TEST(static_cast<TokenId>(data[sequence_counter].tokenid) == tokenid);
         BOOST_TEST(0 == val.which());
 
         typedef boost::iterator_range<wstring_type::iterator> iterator_range;

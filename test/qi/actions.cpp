@@ -8,6 +8,7 @@
 #if defined(_MSC_VER)
 # pragma warning(disable: 4180)     // qualifier applied to function type
                                     // has no meaning; ignored
+# pragma warning(disable: 4709)     // comma operator within array index expression
 #endif
 
 #include <boost/detail/lightweight_test.hpp>

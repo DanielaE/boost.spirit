@@ -9,6 +9,11 @@
 #if !defined(BOOST_SPIRIT_TEST_QI_REAL_HPP)
 #define BOOST_SPIRIT_TEST_QI_REAL_HPP
 
+#if defined(_MSC_VER)
+#pragma warning(push)
+#pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 #include <climits>
 #include <boost/math/concepts/real_concept.hpp>
 #include <boost/detail/lightweight_test.hpp>
@@ -129,5 +134,9 @@ struct custom_real
     friend custom_real operator-(custom_real a, custom_real b) 
         { return custom_real(a.n - b.n); }
 };
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif

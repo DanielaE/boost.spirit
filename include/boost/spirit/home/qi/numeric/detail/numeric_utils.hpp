@@ -203,7 +203,7 @@ namespace boost { namespace spirit { namespace qi { namespace detail
         call(Char ch, std::size_t count, T& n, mpl::true_)
         {
             typedef constexpr_int<std::size_t, digits_traits<T, Radix>::value - 1> overflow_free;
-
+            (void)count;
             if (!AlwaysCheckOverflow && (count < overflow_free::value))
             {
                 Accumulator::add(n, ch, mpl::false_());
