@@ -11,6 +11,8 @@
 
 #if defined(_MSC_VER)
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4244) // narrowing conversion
 #endif
 
 #include <boost/spirit/home/support/common_terminals.hpp>
@@ -30,10 +32,6 @@
 #include <boost/utility/enable_if.hpp>
 #include <boost/type_traits/remove_const.hpp>
 #include <string>
-
-#if defined(_MSC_VER)
-#pragma once
-#endif
 
 namespace boost { namespace spirit
 {
@@ -611,5 +609,9 @@ namespace boost { namespace spirit { namespace qi
         }
     };
 }}}
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif

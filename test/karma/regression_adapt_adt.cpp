@@ -15,6 +15,11 @@
 
 #include "test.hpp"
 
+#if defined(_MSC_VER)
+# pragma warning(disable: 4003) // not enough actual parameters for macro
+# pragma warning(disable: 4127) // conditional expression is constant
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 class data1
 {

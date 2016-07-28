@@ -489,7 +489,7 @@ int main()
         bool ok = true;
 
         for (int t = min ; ok && t <= max ; ++t) {
-            u.tag(t);
+            u.tag(static_cast<short>(t));
             u2 = u;
             BOOST_TEST_EQ(t, u.tag());
             BOOST_TEST_EQ(t, u2.tag());

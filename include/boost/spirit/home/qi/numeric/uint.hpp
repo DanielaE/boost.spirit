@@ -11,6 +11,8 @@
 
 #if defined(_MSC_VER)
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4244) // narrowing conversion
 #endif
 
 #include <boost/spirit/home/qi/skip_over.hpp>
@@ -460,5 +462,9 @@ namespace boost { namespace spirit { namespace qi
       : make_direct_uint<boost::ulong_long_type> {};
 #endif
 }}}
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif
