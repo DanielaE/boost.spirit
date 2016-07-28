@@ -9,6 +9,11 @@
 #ifndef PHOENIX_TUPLEHELPERS_HPP
 #define PHOENIX_TUPLEHELPERS_HPP
 
+#if defined(BOOST_MSVC)
+#  pragma warning(push)
+#  pragma warning(disable:4709)
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 #include <cassert>
 #include <boost/spirit/home/classic/phoenix/tuples.hpp>
@@ -1071,5 +1076,9 @@ namespace impl
 
 ///////////////////////////////////////////////////////////////////////////////
 }   //  namespace phoenix
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif // PHOENIX_TUPLEHELPERS_HPP

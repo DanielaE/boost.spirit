@@ -9,6 +9,11 @@
 #ifndef BOOST_SPIRIT_CLOSURE_HPP
 #define BOOST_SPIRIT_CLOSURE_HPP
 
+#if defined(BOOST_MSVC)
+#  pragma warning(push)
+#  pragma warning(disable:4709)
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 #include <boost/spirit/home/classic/namespace.hpp>
 #include <boost/spirit/home/classic/core/parser.hpp>
@@ -1079,5 +1084,9 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 
 }} // namespace BOOST_SPIRIT_CLASSIC_NS
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif

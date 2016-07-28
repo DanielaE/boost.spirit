@@ -26,6 +26,10 @@
 #include <io.h>    // unlink()
 #endif
 
+#ifdef BOOST_MSVC
+# pragma warning(disable: 4996) // unsafe function
+#endif
+
 using namespace BOOST_SPIRIT_CLASSIC_NS;
 using namespace std;
 

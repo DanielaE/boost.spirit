@@ -9,6 +9,11 @@
 #if !defined(BOOST_SPIRIT_GRAMMAR_DEF_HPP)
 #define BOOST_SPIRIT_GRAMMAR_DEF_HPP
 
+#if defined(BOOST_MSVC)
+#  pragma warning(push)
+#  pragma warning(disable:4709)
+#endif
+
 #include <boost/mpl/if.hpp>
 #include <boost/mpl/eval_if.hpp>
 #include <boost/type_traits/is_same.hpp>
@@ -303,5 +308,9 @@ private:
 BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 
 }} // namespace BOOST_SPIRIT_CLASSIC_NS
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif // BOOST_SPIRIT_GRAMMAR_DEF_HPP
