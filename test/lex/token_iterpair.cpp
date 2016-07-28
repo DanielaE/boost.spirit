@@ -109,6 +109,7 @@ test_token_ids(int const* ids, std::vector<Token> const& tokens)
             return false;           // reached end of expected data
 
         typename Token::token_value_type const& value (t.value());
+       (void)value;
         if (t.id() != static_cast<std::size_t>(*ids))        // token id must match
             return false;
         ++ids;
@@ -127,6 +128,7 @@ test_token_states(std::size_t const* states, std::vector<Token> const& tokens)
             return false;           // reached end of expected data
 
         typename Token::token_value_type const& value (t.value());
+       (void)value;
         if (t.state() != *states)            // token state must match
             return false;
         ++states;

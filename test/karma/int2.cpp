@@ -29,6 +29,9 @@
 
 using namespace spirit_test;
 
+#if defined(_MSC_VER)
+# pragma warning(disable: 4310) // cast truncates constant value
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////
 int
