@@ -12,6 +12,10 @@
 #include <boost/spirit/include/classic_core.hpp>
 #include <boost/spirit/include/classic_assign_actor.hpp>
 
+#ifdef BOOST_MSVC
+# pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 using namespace boost;
 using namespace BOOST_SPIRIT_CLASSIC_NS;
 using namespace std;

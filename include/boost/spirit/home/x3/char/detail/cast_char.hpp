@@ -12,6 +12,11 @@
 #include <boost/type_traits/make_unsigned.hpp>
 #include <boost/type_traits/make_signed.hpp>
 
+#ifdef BOOST_MSVC
+# pragma warning(push)
+# pragma warning(disable: 4127) // conditional expression is constant
+#endif
+
 namespace boost { namespace spirit { namespace x3 { namespace detail
 {
     // Here's the thing... typical encodings (except ASCII) deal with unsigned
@@ -49,6 +54,8 @@ namespace boost { namespace spirit { namespace x3 { namespace detail
     }
 }}}}
 
+#ifdef BOOST_MSVC
+# pragma warning(pop)
 #endif
 
-
+#endif
