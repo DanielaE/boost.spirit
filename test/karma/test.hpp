@@ -6,6 +6,11 @@
 #if !defined(BOOST_SPIRIT_KARMA_TEST_FEB_23_2007_1221PM)
 #define BOOST_SPIRIT_KARMA_TEST_FEB_23_2007_1221PM
 
+#if defined(_MSC_VER)
+#pragma warning(push)
+#pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 #include <cstring>
 #include <string>
 #include <iterator>
@@ -320,5 +325,9 @@ namespace spirit_test
     }
 
 }   // namespace spirit_test
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif // !BOOST_SPIRIT_KARMA_TEST_FEB_23_2007_1221PM

@@ -8,6 +8,10 @@
 
 #include <boost/spirit/include/lex_lexertl.hpp>
 
+#if defined(_MSC_VER)
+# pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 namespace lex = boost::spirit::lex;
 
 typedef lex::lexertl::token<std::string::iterator> token_type;

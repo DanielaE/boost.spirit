@@ -523,21 +523,21 @@ private:
 
         for (; start_ <= end_; ++start_)
         {
-            CharT ch_ = static_cast<CharT> (start_);
+            CharT ch = static_cast<CharT> (start_);
 
             if ((state_._flags & icase) &&
-                (std::isupper (ch_, state_._locale) ||
-                std::islower (ch_, state_._locale)))
+                (std::isupper (ch, state_._locale) ||
+                std::islower (ch, state_._locale)))
             {
-                CharT upper_ = std::toupper (ch_, state_._locale);
-                CharT lower_ = std::tolower (ch_, state_._locale);
+                CharT upper_ = std::toupper (ch, state_._locale);
+                CharT lower_ = std::tolower (ch, state_._locale);
 
                 chars_ += (upper_);
                 chars_ += (lower_);
             }
             else
             {
-                chars_ += (ch_);
+                chars_ += (ch);
             }
         }
     }

@@ -72,7 +72,7 @@ namespace boost { namespace spirit { namespace qi
             if (in) {
                 if (!in.eof()) {
                     std::streamsize pos = in.tellg();
-                    std::advance(first, pos);
+                    std::advance(first, static_cast<ptrdiff_t>(pos));
                 } else {
                     first = last;
                 }

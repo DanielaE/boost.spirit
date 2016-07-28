@@ -18,6 +18,10 @@
 #include <iostream>
 #include "test.hpp"
 
+#if defined(_MSC_VER)
+# pragma warning(disable: 4709)     // comma operator within array index expression
+#endif
+
 struct adata
 {
     int a;
