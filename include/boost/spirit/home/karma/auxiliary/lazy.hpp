@@ -9,6 +9,8 @@
 
 #if defined(_MSC_VER)
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4100) // unreferenced formal parameter
 #endif
 
 #include <boost/spirit/home/karma/domain.hpp>
@@ -263,5 +265,9 @@ namespace boost { namespace spirit { namespace karma
     };
 
 }}}
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif

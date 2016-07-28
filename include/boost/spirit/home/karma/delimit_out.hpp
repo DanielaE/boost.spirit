@@ -22,6 +22,7 @@ namespace boost { namespace spirit { namespace karma
     template <typename OutputIterator, typename Delimiter>
     inline bool delimit_out(OutputIterator& sink, Delimiter const& d)
     {
+        (void)d;
         return d.generate(sink, unused, unused, unused);
     }
 

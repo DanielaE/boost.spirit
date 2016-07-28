@@ -289,7 +289,7 @@ namespace boost { namespace spirit { namespace traits
     {
         static bool call(Container& c, T const& val)
         {
-            c.insert(c.end(), val);
+            c.insert(c.end(), static_cast<typename Container::value_type>(val));
             return true;
         }
     };
