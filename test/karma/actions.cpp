@@ -20,6 +20,10 @@
 #include <sstream>
 #include "test.hpp"
 
+#if defined(_MSC_VER)
+# pragma warning(disable: 4709)     // comma operator within array index expression
+#endif
+
 using namespace spirit_test;
 using boost::spirit::unused_type;
 

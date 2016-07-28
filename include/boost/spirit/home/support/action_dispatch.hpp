@@ -131,6 +131,7 @@ namespace boost { namespace spirit { namespace traits
                     , BOOST_SPIRIT_FAKE_CALL(C)))
                 , fwd_attrib_context_pass>::type
         {
+            (void)f;
             return {};
         }
 

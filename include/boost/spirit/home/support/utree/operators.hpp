@@ -11,6 +11,7 @@
 
 #if defined(BOOST_MSVC)
 # pragma warning(push)
+# pragma warning(disable: 4702) // unreachable code
 # pragma warning(disable: 4804)
 # pragma warning(disable: 4805)
 #endif

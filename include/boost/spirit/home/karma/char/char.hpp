@@ -9,6 +9,8 @@
 
 #if defined(_MSC_VER)
 #pragma once
+#pragma warning(push)
+#pragma warning(disable: 4244) // narrowing conversion
 #endif
 
 #include <boost/spirit/home/support/common_terminals.hpp>
@@ -543,5 +545,9 @@ namespace boost { namespace spirit { namespace karma
         }
     };
 }}}   // namespace boost::spirit::karma
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif
