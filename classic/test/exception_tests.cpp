@@ -14,6 +14,10 @@
 using namespace std;
 using namespace BOOST_SPIRIT_CLASSIC_NS;
 
+#ifdef BOOST_MSVC
+# pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 struct handler
 {
     template <typename ScannerT, typename ErrorT>
