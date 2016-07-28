@@ -14,6 +14,12 @@
 #include <boost/spirit/home/support/char_encoding/ascii.hpp>
 #include <boost/spirit/home/support/char_encoding/iso8859_1.hpp>
 #include <boost/spirit/home/x3/char/char_class_tags.hpp>
+
+#ifdef BOOST_MSVC
+# pragma warning(push)
+# pragma warning(disable: 4127) // conditional expression is constant
+#endif
+
 namespace boost { namespace spirit { namespace x3
 {
     ///////////////////////////////////////////////////////////////////////////
@@ -128,5 +134,9 @@ namespace boost { namespace spirit { namespace x3
     using standard::blank;
     using standard::upper;
 }}}
+
+#ifdef BOOST_MSVC
+# pragma warning(pop)
+#endif
 
 #endif
