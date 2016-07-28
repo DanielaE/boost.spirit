@@ -10,6 +10,11 @@
 #if !defined(BOOST_SPIRIT_PARSER_NAMES_IPP)
 #define BOOST_SPIRIT_PARSER_NAMES_IPP
 
+#if defined(BOOST_MSVC)
+#  pragma warning(push)
+#  pragma warning(disable:4709)
+#endif
+
 #if defined(BOOST_SPIRIT_DEBUG)
 
 #include <string>
@@ -218,7 +223,7 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
 //  from parser.hpp
     template <typename DerivedT>
     inline std::string
-    parser_name(parser<DerivedT> const& p)
+    parser_name(parser<DerivedT> const&)
     {
         return std::string("parser");
     }
@@ -551,5 +556,9 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 #undef BOOST_SPIRIT_GETSTRING
 
 #endif // defined(BOOST_SPIRIT_DEBUG)
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif // !defined(BOOST_SPIRIT_PARSER_NAMES_IPP)

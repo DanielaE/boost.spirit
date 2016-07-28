@@ -8,6 +8,11 @@
 #ifndef PHOENIX_PRIMITIVES_HPP
 #define PHOENIX_PRIMITIVES_HPP
 
+#if defined(BOOST_MSVC)
+#  pragma warning(push)
+#  pragma warning(disable:4709)
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 #include <boost/spirit/home/classic/phoenix/actor.hpp>
 
@@ -252,5 +257,9 @@ const_(actor<BaseT> const& v);  //  This is undefined and not allowed.
 
 ///////////////////////////////////////////////////////////////////////////////
 }   //  namespace phoenix
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif
