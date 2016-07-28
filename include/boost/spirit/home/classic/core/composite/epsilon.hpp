@@ -46,7 +46,8 @@ BOOST_SPIRIT_CLASSIC_NAMESPACE_BEGIN
         typename parser_result<self_t, ScannerT>::type
         parse(ScannerT const& scan) const
         {
-            if (positive_ == bool(cond())) // allow cond to return int
+            (void)scan;
+            if (positive_ == (!!cond())) // allow cond to return int
                 return scan.empty_match();
             else
                 return scan.no_match();

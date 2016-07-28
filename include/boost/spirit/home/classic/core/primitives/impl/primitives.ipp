@@ -20,6 +20,7 @@
 #if defined(BOOST_MSVC)
 #  pragma warning (push)
 #  pragma warning(disable:4800)
+#  pragma warning(disable:4806)
 #endif
 
 namespace boost { namespace spirit {

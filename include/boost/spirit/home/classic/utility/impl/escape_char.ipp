@@ -10,6 +10,11 @@
 #ifndef BOOST_SPIRIT_ESCAPE_CHAR_IPP
 #define BOOST_SPIRIT_ESCAPE_CHAR_IPP
 
+#if defined(BOOST_MSVC)
+#  pragma warning(push)
+#  pragma warning(disable:4127)
+#endif
+
 #include <boost/spirit/home/classic/core/parser.hpp>
 #include <boost/spirit/home/classic/core/primitives/numerics.hpp>
 #include <boost/spirit/home/classic/core/composite/difference.hpp>
@@ -219,6 +224,10 @@ namespace impl {
 BOOST_SPIRIT_CLASSIC_NAMESPACE_END
 
 }} // namespace boost::spirit
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif
 
