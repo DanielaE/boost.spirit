@@ -22,9 +22,17 @@
 #include <iostream>
 #include "test.hpp"
 
+#if defined(_MSC_VER)
+#include <cstdlib>
+#endif
+
 int
 main()
 {
+#if defined(_MSC_VER)
+    _set_abort_behavior(0, _WRITE_ABORT_MSG);
+#endif
+
     using spirit_test::test;
     using spirit_test::test_attr;
 
