@@ -16,7 +16,6 @@
 #include <algorithm>    // for std::swap
 #include <exception>    // for std::exception
 #include <boost/limits.hpp>
-#include <boost/iterator.hpp>
 
 #include <boost/spirit/home/classic/namespace.hpp>
 #include <boost/spirit/home/classic/core/assert.hpp> // for BOOST_SPIRIT_ASSERT
@@ -770,14 +769,13 @@ struct iterator_base_creator
 {
     typedef typename InputPolicyT::BOOST_NESTED_TEMPLATE inner<InputT> input_t;
 
-    typedef boost::iterator
-    <
-        std::forward_iterator_tag,
-        typename input_t::value_type,
-        typename input_t::difference_type,
-        typename input_t::pointer,
-        typename input_t::reference
-    > type;
+    struct type {
+        typedef std::forward_iterator_tag iterator_category;
+        typedef typename input_t::value_type value_type;
+        typedef typename input_t::difference_type difference_type;
+        typedef typename input_t::pointer pointer;
+        typedef typename input_t::reference reference;
+    };
 };
 
 }}
