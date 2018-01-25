@@ -11,6 +11,11 @@
 
 namespace boost { namespace spirit { namespace x3 { namespace detail
 {
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4244) // narrowing conversion
+#endif
+
     template <typename Char, typename Iterator, typename Attribute, typename CaseCompareFunc>
     inline bool string_parse(
         Char const* str
@@ -30,6 +35,10 @@ namespace boost { namespace spirit { namespace x3 { namespace detail
         first = i;
         return true;
     }
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
     template <typename String, typename Iterator, typename Attribute, typename CaseCompareFunc>
     inline bool string_parse(

@@ -32,8 +32,17 @@ namespace boost { namespace spirit { namespace x3
         static bool const has_attribute = false;
         typedef unused_type attribute_type;
 
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4244) // narrowing
+#endif
+
         binary_lit_parser(V n_)
           : n(n_) {}
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
         template <typename Iterator, typename Context, typename Attribute>
         bool parse(Iterator& first, Iterator const& last

@@ -9,6 +9,10 @@
 #include <cstring>
 #include <functional>
 
+#ifdef BOOST_MSVC
+#pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 namespace x3 = boost::spirit::x3;
 
 int x = 0;
