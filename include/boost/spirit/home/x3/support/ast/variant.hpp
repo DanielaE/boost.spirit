@@ -13,6 +13,11 @@
 #include <utility>
 #include <type_traits>
 
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4521) // multiple copy constructors specified
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////
 namespace boost { namespace spirit { namespace x3
 {
@@ -254,5 +259,9 @@ namespace boost
         return boost::get<T>(&x->get());
     }
 }
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif

@@ -17,6 +17,10 @@
 #include <iostream>
 #include "test.hpp"
 
+#ifdef BOOST_MSVC
+#pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 using boost::spirit::x3::_val;
 
 struct f

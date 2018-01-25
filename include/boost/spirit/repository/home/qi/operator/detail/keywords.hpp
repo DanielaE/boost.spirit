@@ -13,6 +13,12 @@
 #include <boost/fusion/include/nview.hpp>
 #include <boost/spirit/home/qi/string/lit.hpp>
 #include <boost/fusion/include/at.hpp>
+
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4127) // conditional expression is constant
+#endif
+
 namespace boost { namespace spirit { namespace repository { namespace qi { namespace detail {
     // Variant visitor class which handles dispatching the parsing to the selected parser
     // This also handles passing the correct attributes and flags/counters to the subject parsers
@@ -696,5 +702,9 @@ namespace boost { namespace spirit { namespace repository { namespace qi { names
 
 
 }}}}}
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif

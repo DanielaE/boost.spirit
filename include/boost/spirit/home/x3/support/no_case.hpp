@@ -11,6 +11,11 @@
 #include <boost/spirit/home/x3/support/context.hpp>
 #include <boost/spirit/home/x3/char/char_class_tags.hpp>
 
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 namespace boost { namespace spirit { namespace x3
 {
     struct no_case_tag {};
@@ -98,5 +103,9 @@ namespace boost { namespace spirit { namespace x3
     auto const no_case_compare_ = no_case_tag{};
 
 }}}
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif

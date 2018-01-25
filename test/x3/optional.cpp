@@ -12,6 +12,10 @@
 #include <iostream>
 #include "test.hpp"
 
+#ifdef BOOST_MSVC
+#pragma warning(disable: 4709) // comma operator within array index expression
+#endif
+
 struct adata
 {
     int a;

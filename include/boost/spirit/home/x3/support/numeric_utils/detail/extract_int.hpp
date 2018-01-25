@@ -38,6 +38,11 @@
 # define SPIRIT_NUMERICS_LOOP_UNROLL 3
 #endif
 
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4127) // conditional expression is constant
+#endif
+
 namespace boost { namespace spirit { namespace x3 { namespace detail
 {
     ///////////////////////////////////////////////////////////////////////////
@@ -475,5 +480,9 @@ namespace boost { namespace spirit { namespace x3 { namespace detail
 
 #undef SPIRIT_NUMERIC_INNER_LOOP
 }}}}
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif

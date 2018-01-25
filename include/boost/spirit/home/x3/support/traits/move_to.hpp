@@ -19,6 +19,11 @@
 #include <boost/fusion/include/is_sequence.hpp>
 #include <utility>
 
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4244) // narrowing conversion
+#endif
+
 namespace boost { namespace spirit { namespace x3 { namespace traits
 {
     template <typename Source, typename Dest>
@@ -224,5 +229,9 @@ namespace boost { namespace spirit { namespace x3 { namespace traits
         detail::move_to(first, last, dest, typename attribute_category<Dest>::type());
     }
 }}}}
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif
